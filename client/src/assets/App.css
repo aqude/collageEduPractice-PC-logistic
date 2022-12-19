@@ -1,0 +1,33 @@
+.header {
+    background-color: #222;
+
+    padding: 0;
+    color: white;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    box-shadow: #222222 0px 0px 20px 0px;
+
+    margin-bottom: 50px;
+}
+.header__nav {
+    padding: 40px 0;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+
+    align-items: center;
+}
+
+.header__nav__link {
+    padding: 0 20px;
+    text-decoration: none;
+    color: white;
+    transition: color .2s ease-in-out;
+}
+
+.header__nav__link:hover {
+    color: #61dafb;
+}
+
