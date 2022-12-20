@@ -1,5 +1,5 @@
 import forms from "../assets/forms.css";
-import React from 'react'
+import React, {useEffect} from 'react'
 import {useState} from "react";
 
 function formsPage() {
@@ -13,6 +13,7 @@ function formsPage() {
     const [quantity, setQuantity] = useState('');
     const [price, setPrice] = useState('');
 
+
     const [dateDirty, setDateDirty] = useState(false);
     const [componentDirty, setComponentDirty] = useState(false);
     const [documentDirty, setDocumentDirty] = useState(false);
@@ -22,7 +23,15 @@ function formsPage() {
     const [modelDirty, setModelDirty] = useState(false);
     const [quantityDirty, setQuantityDirty] = useState(false);
     const [priceDirty, setPriceDirty] = useState(false);
+    const [formValue, setFormValue] = useState(false);
+    useEffect(() => {
+        if (dateError || componentError || documentError || produserError || type_of_component_deviceError || fabricatorError || modelError || quantityError || priceError) {
+            setFormValue(false);
 
+        } else {
+            setFormValue(true);
+        }
+    })
     const [dateError, setDateError] = useState('Поле не может быть пустым');
     const [componentError, setComponentError] = useState('Поле не может быть пустым');
     const [documentError, setDocumentError] = useState('Поле не может быть пустым');
@@ -32,6 +41,8 @@ function formsPage() {
     const [modelError, setModelError] = useState('Поле не может быть пустым');
     const [quantityError, setQuantityError] = useState('Поле не может быть пустым');
     const [priceError, setPriceError] = useState('Поле не может быть пустым');
+
+
 
 
     const DataHendler = (e) => {
@@ -174,7 +185,6 @@ function formsPage() {
     }
 
 
-
     return (
         <div className="forms__page">
           <form className="forms__inputs">
@@ -186,7 +196,7 @@ function formsPage() {
                 {(documentDirty && documentError) && <div style={{color: 'red', fontSize: '15px'}}>{documentError}</div>}
                 <input onChange={e =>  DocumentHendler(e)} onBlur={e => BlurHendler(e)} className="forms__input" name="document_number" type="number" placeholder="Введите номер документа..."/>
                 {(produserDirty && produserError) && <div style={{color: 'red', fontSize: '15px'}}>{produserError}</div>}
-                <input onChange={e =>  PriceHendler(e)} onBlur={e => BlurHendler(e)} className="forms__input" name="producer" type="text" placeholder="Введите поставщика..."/>
+                <input onChange={e =>  ProduserHendler(e)} onBlur={e => BlurHendler(e)} className="forms__input" name="producer" type="text" placeholder="Введите поставщика..."/>
                 {(type_of_component_deviceDirty && type_of_component_deviceError) && <div style={{color: 'red', fontSize: '15px'}}>{type_of_component_deviceError}</div>}
                 <input onChange={e =>  Type_of_component_deviceHendler(e)} onBlur={e => BlurHendler(e)} className="forms__input" name="Type_of_component_device" type="text" placeholder="Введите тип комплектующего устройства..."/>
                 {(fabricatorDirty && fabricatorError) && <div style={{color: 'red', fontSize: '15px'}}>{fabricatorError}</div>}
@@ -197,7 +207,7 @@ function formsPage() {
                 <input onChange={e =>  QuantityHendler(e)} onBlur={e => BlurHendler(e)} className="forms__input" name="quantity" type="number" placeholder="Введите количество..."/>
                 {(priceDirty && priceError) && <div style={{color: 'red', fontSize: '15px'}}>{priceError}</div>}
                 <input onChange={e =>  PriceHendler(e)} onBlur={e => BlurHendler(e)} className="forms__input" name="price" type="number" placeholder="Введите цену..."/>
-                <button onBlur={e => BlurHendler(e)} className="forms__button">Создать</button>
+                <button disabled={!formValue} onBlur={e => BlurHendler(e)} className="forms__button">Создать</button>
           </form>
         </div>
     )
