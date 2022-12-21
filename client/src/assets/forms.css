@@ -28,7 +28,7 @@
 }
 
 .forms__button {
-    margin: 30px 10px 0 0px;
+    margin: 0px 0px 20px 0px;
     padding: 10px;
     border-radius: 10px;
     border: 1px solid #222;
@@ -44,5 +44,5 @@
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
 }
 .forms__header {
-    margin-bottom: 11px;
+    margin: 20px 0px 20px 0px;
 }

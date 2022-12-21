@@ -10,12 +10,8 @@ function headerPageInfo() {
       <header className="header">
           <nav className="header__nav">
               <div className="header__forms">
-              <a>
                 <Link className="header__nav__link" to="/forms__create">Создать закупочный лист</Link>
-              </a>
-              <a>
                 <Link className="header__nav__link" to="/">Просмотреть закупочные товары</Link>
-              </a>
               </div>
               <div className="header__authorization">
                   <a>
