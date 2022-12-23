@@ -3,7 +3,7 @@ import {Routes, Route, Link} from "react-router-dom";
 import Forms from "../pages/FormsPage.jsx";
 import FormsViewer from "../pages/formsViewer";
 import ErrorPage from "../pages/ErrorPage";
-import App from "../assets/App.css";
+import "../assets/App.css";
 function headerPageInfo() {
   return (
     <div>

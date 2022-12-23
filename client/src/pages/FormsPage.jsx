@@ -1,4 +1,4 @@
-import register from "../assets/forms.css";
+import "../assets/forms.css";
 import { useForm } from "react-hook-form";
 import React from "react";
 import {db} from "../firebase";
