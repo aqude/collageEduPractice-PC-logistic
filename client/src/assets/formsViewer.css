@@ -24,6 +24,19 @@ td {
     max-width: 500px;
 }
 
-.forms__viewer__page {
+.btn {
+    background-color: #222;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: .3s ease-in-out;
+}
 
+.btn:hover {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    background-color: #61dafb;
+    color: white;
 }
