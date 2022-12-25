@@ -30,27 +30,27 @@ function formsViewer() {
             <table>
                 <thead>
                     <tr className="th_header">
-                        <th className="th_el">Комплектующие</th>
-                        <th className="th_el">Номер документа</th>
-                        <th className="th_el">Производитель</th>
-                        <th className="th_el">Тип комплектующего</th>
-                        <th className="th_el">Фабрикант</th>
-                        <th className="th_el">Модель</th>
-                        <th className="th_el">Количество</th>
-                        <th className="th_el">Цена</th>
+                        <th>Дата</th>
+                        <th >Номер документа</th>
+                        <th >Производитель</th>
+                        <th >Тип комплектующего</th>
+                        <th >Фабрикант</th>
+                        <th >Модель</th>
+                        <th >Количество</th>
+                        <th >Цена</th>
                     </tr>
                 </thead>
                 <tbody>
                     {forms.map((form) => (
                         <tr>
-                            <td className="">{form.component}</td>
-                            <td className="">{form.document_number}</td>
-                            <td className="">{form.producer}</td>
-                            <td className="">{form.Type_of_component_device}</td>
-                            <td className="">{form.fabricator}</td>
-                            <td className="">{form.Model}</td>
-                            <td className="">{form.quantity}</td>
-                            <td className="">{form.price}</td>
+                            <td>{form.data}</td>
+                            <td>{form.document_number}</td>
+                            <td>{form.producer}</td>
+                            <td>{form.Type_of_component_device}</td>
+                            <td>{form.fabricator}</td>
+                            <td>{form.Model}</td>
+                            <td>{form.quantity}</td>
+                            <td>{form.price}</td>
                             <td className="td_btn">
                                 <button className="btn" onClick={() => deleteData(form.id)}>Удалить</button>
                             </td>

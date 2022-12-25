@@ -22,7 +22,6 @@ function formsPage() {
   const onSummit = (data) => {
     console.log(data);
     addDoc(collection(db, "forms"), {
-      component: data.component,
       document_number: data.document_number,
       producer: data.producer,
       Type_of_component_device: data.Type_of_component_device,
@@ -30,6 +29,7 @@ function formsPage() {
       Model: data.Model,
       quantity: data.quantity,
       price: data.price,
+      data: data.data = new Date().toLocaleDateString(),
     }).then(() => {
         alert("Данные успешно добавлены");
         reset();
@@ -41,22 +41,6 @@ function formsPage() {
     <div className="forms__page">
       <form onSubmit={handleSubmit(onSummit)} className="forms__inputs">
         <h1 className="forms__header">Закупочный лист</h1>
-
-        <input
-          {...register("component", {
-            required: "Поле обязательно к заполнению",
-          })}
-          className="forms__input"
-          type="text"
-          placeholder="Введите комплектующие..."
-        />
-        <div style={{ height: 25 }}>
-          {errors.component && (
-            <div style={{ color: "red", fontSize: "15px" }}>
-              {errors.component.message}
-            </div>
-          )}
-        </div>
         <input
           {...register("document_number", {
             required: "Поле обязательно к заполнению",

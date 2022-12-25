@@ -1,7 +1,7 @@
 import ReactDOM from "react-dom/client";
 import {Routes, Route, Link} from "react-router-dom";
 import Forms from "../pages/FormsPage.jsx";
-import FormsViewer from "../pages/formsViewer";
+import FormsViewer from "../pages/FormsViewer.jsx";
 import ErrorPage from "../pages/ErrorPage";
 import "../assets/App.css";
 function headerPageInfo() {
