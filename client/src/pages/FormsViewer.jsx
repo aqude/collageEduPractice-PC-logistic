@@ -22,12 +22,57 @@ function formsViewer() {
         deleteDoc(doc(db, "forms", id));
         setForms(forms.filter((item) => item.id !== id));
     }
+    // общая цена
+    const averagePrice = () => {
+        let sum = 0;
+        for (let i = 0; i < forms.length; i++) {
+            forms[i].price = +forms[i].price;
+            sum += forms[i].price;
+        }
+        return sum;
+    }
 
-
+    // количество товаров
+    const countOfGoods = () => {
+        let count = 0;
+        for (let i = 0; i < forms.length; i++) {
+            count ++;
+        }
+        return count;
+    }
+    // средняя цена
+    const averagePriceOfGoods = () => {
+        let sum = 0;
+        for (let i = 0; i < forms.length; i++) {
+            forms[i].price = +forms[i].price;
+            sum += forms[i].price;
+        }
+        return (sum / forms.length).toFixed(0);
+    }
     return (
         <div>
             <h1 style={{textAlign: "center", marginBottom: 20}}>Закупочные товары</h1>
-            <table>
+            <div className="info" style = {{marginBottom: 40, marginTop: 10}}>
+                <table className="table-info">
+                    <thead>
+                        <tr className="th_header">
+                            <th>Общая цена</th>
+                            <th>Средняя цена</th>
+                            <th>Количество товаров</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>{averagePrice()}</td>
+                            <td>{averagePriceOfGoods()}</td>
+                            <td>{countOfGoods()}</td>  
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+                
+            <table className="table-info">
                 <thead>
                     <tr className="th_header">
                         <th>Дата</th>

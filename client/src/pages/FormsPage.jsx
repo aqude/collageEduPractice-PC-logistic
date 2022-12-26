@@ -4,11 +4,7 @@ import React from "react";
 import {db} from "../firebase";
 import {
   collection,
-  getDocs,
   addDoc,
-  updateDoc,
-  deleteDoc,
-  doc,
 } from "firebase/firestore";
 function formsPage() {
   const {
